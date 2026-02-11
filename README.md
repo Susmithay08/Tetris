@@ -13,7 +13,7 @@ Play Here:
 📷 Preview
 
 <p align="center">
-  <img src="assets/preview.png" width="600">
+  <img src="Preview.png" width="600">
 </p>
 
 
