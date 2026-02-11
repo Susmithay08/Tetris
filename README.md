@@ -10,6 +10,13 @@ An interactive 3D arcade-style Tetris game built using pure HTML, CSS (3D transf
 
 Play Here: 
 
+📷 Preview
+
+<p align="center">
+  <img src="assets/preview.png" width="600">
+</p>
+
+
 🛠 Technologies Used
 
 HTML5
