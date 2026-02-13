@@ -853,7 +853,7 @@ canvas {
 }
 
 #controls:after {
-    content: "ATARI\00A9 1988";
+    content: "SY\00A9 1988";
     color: #fff;
     font-size: 0.7vmin;
     margin-top: 0.5vmin;
