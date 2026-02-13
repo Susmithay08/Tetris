@@ -8,7 +8,7 @@ An interactive 3D arcade-style Tetris game built using pure HTML, CSS (3D transf
 
 🚀 Live Demo
 
-Play Here: https://susmithay08.github.io/Tetris/
+Play Here: https://tetris-arcade.vercel.app/
 
 📷 Preview
 
