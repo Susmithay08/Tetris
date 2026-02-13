@@ -1897,12 +1897,14 @@ button#center-scene:active span.info:after {
 
 .mobile-controls {
     position: fixed;
-    bottom: 20px;
+    bottom: 0;
     left: 0;
     width: 100%;
     display: flex;
     justify-content: space-around;
-    z-index: 99999;
+    padding: 15px 10px;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999999;
 }
 
 .mobile-controls button {
@@ -1912,4 +1914,6 @@ button#center-scene:active span.info:after {
     color: white;
     border: none;
     border-radius: 10px;
+    flex: 1;
+    margin: 0 5px;
 }
