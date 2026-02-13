@@ -292,8 +292,34 @@
     <button id="block-joystick" onclick="toggleJoystick()" class=""><span class="info"></span><span></span></button>
     <button id="center-scene" onclick="centerScene()" class=""><span class="info"></span><span></span></button>
 
+    <!-- Mobile Controls -->
+    <div id="mobile-controls">
+        <div class="controls-container">
+            <div class="dpad">
+                <button id="btn-up" class="control-btn up" data-key="38" aria-label="Rotate">
+                    <span>⬆</span>
+                </button>
+                <button id="btn-left" class="control-btn left" data-key="37" aria-label="Move Left">
+                    <span>⬅</span>
+                </button>
+                <button id="btn-down" class="control-btn down" data-key="40" aria-label="Move Down">
+                    <span>⬇</span>
+                </button>
+                <button id="btn-right" class="control-btn right" data-key="39" aria-label="Move Right">
+                    <span>➡</span>
+                </button>
+            </div>
+            <div class="action-buttons">
+                <button id="btn-rotate" class="control-btn rotate" data-key="38" aria-label="Rotate">
+                    <span>↻</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script src="camera.js"></script>
     <script src="script.js"></script>
+    <script src="mobile-controls.js"></script>
 </body>
 
 </html>
