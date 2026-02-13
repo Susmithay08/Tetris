@@ -75,41 +75,6 @@ html:active {
     animation: none !important;
 }
 
-/* Mobile Controls */
-.mobile-controls {
-    display: none;
-}
-
-@media (max-width: 768px) {
-
-    .mobile-controls {
-        display: grid !important;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1vmin;
-        margin-top: 2vmin;
-    }
-
-
-    .mobile-controls button {
-        font-size: 2.5vmin;
-        padding: 2vmin;
-        background: #222;
-        color: white;
-        border: none;
-        border-radius: 1vmin;
-    }
-
-    canvas {
-        width: 60vw;
-        height: auto;
-    }
-
-    body {
-        overflow: hidden;
-        touch-action: none;
-    }
-}
-
 
 
 /*** CAMERA END ***/
@@ -1928,4 +1893,23 @@ button#center-scene:active span.info:after {
     background-size: 75% 100%;
     background-repeat: no-repeat;
     transform: rotateX(180deg);
+}
+
+.mobile-controls {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    z-index: 99999;
+}
+
+.mobile-controls button {
+    font-size: 24px;
+    padding: 18px;
+    background: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 10px;
 }
