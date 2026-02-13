@@ -1,5 +1,5 @@
 # Tetris
-Interactive 3D Tetris arcade game built using HTML, CSS (3D transforms), and JavaScript with custom camera controls. Please use you laptop to play this game.
+Interactive 3D Tetris arcade game built using HTML, CSS (3D transforms), and JavaScript with custom camera controls. 
 
 
 🎮 3D Tetris Arcade
