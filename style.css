@@ -78,53 +78,37 @@ html:active {
 /* Mobile Controls */
 .mobile-controls {
     display: none;
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10000;
-    flex-direction: column;
-    gap: 10px;
 }
 
-.control-row {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
-
-.mobile-btn {
-    background: rgba(0, 0, 0, 0.8);
-    color: #00ff00;
-    border: 2px solid #00ff00;
-    border-radius: 8px;
-    padding: 15px 25px;
-    font-size: 18px;
-    font-weight: bold;
-    font-family: 'Press Start 2P', cursive;
-    cursor: pointer;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.mobile-btn:active {
-    background: rgba(0, 255, 0, 0.3);
-    transform: scale(0.95);
-}
-
-/* Show on mobile */
 @media (max-width: 768px) {
+
     .mobile-controls {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1vmin;
+        margin-top: 2vmin;
+    }
+
+    .mobile-controls button {
+        font-size: 2.5vmin;
+        padding: 2vmin;
+        background: #222;
+        color: white;
+        border: none;
+        border-radius: 1vmin;
+    }
+
+    canvas {
+        width: 60vw;
+        height: auto;
+    }
+
+    body {
+        overflow: hidden;
+        touch-action: none;
     }
 }
 
-/* Hide desktop instructions on mobile */
-@media (max-width: 768px) {
-    #controls {
-        display: none;
-    }
-}
 
 
 /*** CAMERA END ***/

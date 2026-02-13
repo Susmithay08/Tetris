@@ -519,63 +519,61 @@ window.addEventListener("keydown", function (e) {
         e.preventDefault();
     }
 }, false);
-// Mobile Touch Controls
-function setupMobileControls() {
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-    if (!isMobile) return;
-
-    const leftBtn = document.getElementById('left-btn');
-    const rightBtn = document.getElementById('right-btn');
-    const downBtn = document.getElementById('down-btn');
-    const rotateBtn = document.getElementById('rotate-btn');
-
-    if (!leftBtn) return; // Exit if buttons not found
-
-    // Prevent default touch behavior
-    [leftBtn, rightBtn, downBtn, rotateBtn].forEach(btn => {
-        btn.addEventListener('touchstart', (e) => e.preventDefault());
-    });
-
-    // Left button
-    leftBtn.addEventListener('touchstart', () => {
-        if (gameOver) return;
-        const col = tetromino.col - 1;
-        if (isValidMove(tetromino.matrix, tetromino.row, col)) {
-            tetromino.col = col;
-        }
-    });
-
-    // Right button
-    rightBtn.addEventListener('touchstart', () => {
-        if (gameOver) return;
-        const col = tetromino.col + 1;
-        if (isValidMove(tetromino.matrix, tetromino.row, col)) {
-            tetromino.col = col;
-        }
-    });
-
-    // Down button
-    downBtn.addEventListener('touchstart', () => {
-        if (gameOver) return;
-        const row = tetromino.row + 1;
-        if (!isValidMove(tetromino.matrix, row, tetromino.col)) {
-            tetromino.row = row - 1;
-            placeTetromino();
-            return;
-        }
-        tetromino.row = row;
-    });
-
-    // Rotate button
-    rotateBtn.addEventListener('touchstart', () => {
-        if (gameOver) return;
-        const matrix = rotate(tetromino.matrix);
-        if (isValidMove(matrix, tetromino.row, tetromino.col)) {
-            tetromino.matrix = matrix;
-        }
-    });
+function moveLeft() {
+    const col = tetromino.col - 1;
+    if (isValidMove(tetromino.matrix, tetromino.row, col)) {
+        tetromino.col = col;
+    }
 }
 
-// Call on page load
-window.addEventListener('load', setupMobileControls);
+function moveRight() {
+    const col = tetromino.col + 1;
+    if (isValidMove(tetromino.matrix, tetromino.row, col)) {
+        tetromino.col = col;
+    }
+}
+
+function moveDown() {
+    const row = tetromino.row + 1;
+    if (!isValidMove(tetromino.matrix, row, tetromino.col)) {
+        tetromino.row = row - 1;
+        placeTetromino();
+        return;
+    }
+    tetromino.row = row;
+}
+
+function rotatePiece() {
+    const matrix = rotate(tetromino.matrix);
+    if (isValidMove(matrix, tetromino.row, tetromino.col)) {
+        tetromino.matrix = matrix;
+    }
+}
+
+if (window.innerWidth <= 768) {
+    document.getElementById("m-left").addEventListener("touchstart", moveLeft);
+    document.getElementById("m-right").addEventListener("touchstart", moveRight);
+    document.getElementById("m-down").addEventListener("touchstart", moveDown);
+    document.getElementById("m-rotate").addEventListener("touchstart", rotatePiece);
+}
+let touchStartX = 0;
+let touchStartY = 0;
+
+canvas.addEventListener("touchstart", e => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+});
+
+canvas.addEventListener("touchend", e => {
+    let dx = e.changedTouches[0].clientX - touchStartX;
+    let dy = e.changedTouches[0].clientY - touchStartY;
+
+    if (Math.abs(dx) > Math.abs(dy)) {
+        if (dx > 30) moveRight();
+        else if (dx < -30) moveLeft();
+    } else {
+        if (dy > 30) moveDown();
+        else rotatePiece();
+    }
+});

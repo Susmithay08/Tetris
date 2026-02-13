@@ -158,6 +158,13 @@
 
                     <div class="tetris">
                         <canvas width="220" height="440" id="game"></canvas>
+                        <div class="mobile-controls">
+                            <button id="m-left">◀</button>
+                            <button id="m-rotate">⟳</button>
+                            <button id="m-right">▶</button>
+                            <button id="m-down">▼</button>
+                        </div>
+
                         <div id="score">0</div>
                         <div id="lines">0</div>
                         <div id="round" class="showing">1</div>
@@ -294,17 +301,7 @@
 
     <script src="camera.js"></script>
     <script src="script.js"></script>
-    <!-- Mobile Controls -->
-    <div id="mobile-controls" class="mobile-controls">
-        <div class="control-row">
-            <button class="mobile-btn" id="rotate-btn">↻ ROTATE</button>
-        </div>
-        <div class="control-row">
-            <button class="mobile-btn" id="left-btn">← LEFT</button>
-            <button class="mobile-btn" id="down-btn">↓ DOWN</button>
-            <button class="mobile-btn" id="right-btn">→ RIGHT</button>
-        </div>
-    </div>
+
 
 </body>
 
