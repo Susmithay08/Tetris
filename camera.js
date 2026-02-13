@@ -159,10 +159,8 @@ class Camera {
 
     init() {
         if (this.options.debug) console.info(this.options)
-        if (window.innerWidth > 768) {
-            this.#register('pointerdown', e => this.setEvents(e))
-        }
 
+        this.#register('pointerdown', e => this.setEvents(e))
         this.#register('pointerup', e => this.disposeEvents(e))
         this.#register('dblclick', _e => this.toggleAutoRotate())
         this.#register('wheel', e => this.wheelZoom(e))

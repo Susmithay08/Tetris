@@ -76,7 +76,6 @@ html:active {
 }
 
 
-
 /*** CAMERA END ***/
 
 
@@ -100,7 +99,7 @@ body {
     padding: 0;
     width: 100vw;
     height: 100vh;
-
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1893,27 +1892,4 @@ button#center-scene:active span.info:after {
     background-size: 75% 100%;
     background-repeat: no-repeat;
     transform: rotateX(180deg);
-}
-
-.mobile-controls {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    padding: 15px 10px;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 999999;
-}
-
-.mobile-controls button {
-    font-size: 24px;
-    padding: 18px;
-    background: #ff0000;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    flex: 1;
-    margin: 0 5px;
 }
