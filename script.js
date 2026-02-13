@@ -519,3 +519,38 @@ window.addEventListener("keydown", function (e) {
         e.preventDefault();
     }
 }, false);
+
+function toggleMobileControls() {
+    elem('mobile-controls').classList.toggle('hide');
+}
+
+function moveLeft() {
+    const col = tetromino.col - 1;
+    if (isValidMove(tetromino.matrix, tetromino.row, col)) {
+        tetromino.col = col;
+    }
+}
+
+function moveRight() {
+    const col = tetromino.col + 1;
+    if (isValidMove(tetromino.matrix, tetromino.row, col)) {
+        tetromino.col = col;
+    }
+}
+
+function moveDown() {
+    const row = tetromino.row + 1;
+    if (!isValidMove(tetromino.matrix, row, tetromino.col)) {
+        tetromino.row = row - 1;
+        placeTetromino();
+        return;
+    }
+    tetromino.row = row;
+}
+
+function rotatePiece() {
+    const matrix = rotate(tetromino.matrix);
+    if (isValidMove(matrix, tetromino.row, tetromino.col)) {
+        tetromino.matrix = matrix;
+    }
+}

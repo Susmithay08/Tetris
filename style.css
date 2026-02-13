@@ -1893,3 +1893,45 @@ button#center-scene:active span.info:after {
     background-repeat: no-repeat;
     transform: rotateX(180deg);
 }
+
+/* MOBILE CONTROLS BUTTON */
+button#mobile-controls-toggle {
+    margin-top: 56vmin;
+}
+
+button#mobile-controls-toggle:before {
+    content: "";
+    top: 1vmin;
+    left: 1vmin;
+    width: 4vmin;
+    height: 4vmin;
+    background: linear-gradient(90deg, #fff 0.5vmin, #fff0 0),
+        linear-gradient(#fff 0.5vmin, #fff0 0);
+    background-size: 100% 1vmin, 1vmin 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* MOBILE CONTROL PANEL */
+.mobile-controls {
+    position: absolute;
+    bottom: 2vmin;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1vmin;
+}
+
+.mobile-controls button {
+    width: 4vmin;
+    height: 4vmin;
+    font-size: 2vmin;
+    background: #111;
+    color: white;
+    border-radius: 0.5vmin;
+    border: 1px solid #444;
+}
+
+.mobile-controls.hide {
+    display: none;
+}
