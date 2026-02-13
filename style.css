@@ -1896,7 +1896,7 @@ button#center-scene:active span.info:after {
 
 /* MOBILE CONTROLS BUTTON */
 button#mobile-controls-toggle {
-    margin-top: 56vmin;
+    margin-top: 48vmin;
 }
 
 button#mobile-controls-toggle:before {
@@ -1920,6 +1920,8 @@ button#mobile-controls-toggle:before {
     transform: translateX(-50%);
     display: flex;
     gap: 1vmin;
+    z-index: 9999;
+    pointer-events: auto;
 }
 
 .mobile-controls button {
